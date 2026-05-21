@@ -8,7 +8,7 @@ A Windows Forms blood donation management system (C# .NET 10 + SQL Server).
 2. Open `BloodConnect.sln` in Visual Studio.
 3. Database setup in SSMS (Ctrl+A, then F5):
    - **New install:** run `Blood.sql` (creates **BloodConnectDB** from scratch).
-   - **Already have BloodConnectDB:** run `BloodConnect_Upgrade.sql` then `BloodConnect_Workflow.sql` (adds columns for donor–receiver assignment).
+   - **Already have BloodConnectDB:** run `BloodConnect_Upgrade.sql` only.
 4. SQL Server **SQLEXPRESS** must be running. Default connection uses a **named pipe** (works without SQL Browser). If login fails with “server not found”, start the **SQL Server Browser** service or change `Server=` in `DataAccess.cs` to `localhost\SQLEXPRESS`.
 5. Build and run (F5), or from terminal: `dotnet build` then `dotnet run --project BloodConnect`.
 
@@ -26,8 +26,7 @@ A Windows Forms blood donation management system (C# .NET 10 + SQL Server).
 - Register/login as **Blood Donor**
 - Update profile (blood group, age, address, phone)
 - **Search / Update / Delete** donation records
-- **Search / Update / Delete** donation appointments
-- Record new donations
+- **Search / Update / Delete** donation appointments (status is read-only; admin approves and completes)
 
 ### Blood Receiver (blue portal)
 - Register/login as **Blood Receiver**

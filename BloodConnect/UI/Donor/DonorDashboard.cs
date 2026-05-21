@@ -30,7 +30,6 @@ namespace BloodConnect.UI.Donor
         private void btnDashboard_Click(object sender, EventArgs e) => LoadForm(new DonorDashboardHomeForm(userId, userName));
         private void btnProfile_Click(object sender, EventArgs e) => LoadForm(new DonorProfileForm(userId));
         private void btnDonations_Click(object sender, EventArgs e) => LoadForm(new DonorDonationsForm(userId));
-        private void btnRecordDonation_Click(object sender, EventArgs e) => LoadForm(new DonorRecordDonationForm(userId));
         private void btnAppointments_Click(object sender, EventArgs e) => LoadForm(new DonorAppointmentsForm(userId));
 
         private void btnLogout_Click(object sender, EventArgs e)

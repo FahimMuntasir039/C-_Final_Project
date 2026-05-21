@@ -10,7 +10,6 @@ namespace BloodConnect.UI.Donor
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnDonations;
-        private System.Windows.Forms.Button btnRecordDonation;
         private System.Windows.Forms.Button btnAppointments;
         private System.Windows.Forms.Button btnLogout;
 
@@ -27,7 +26,6 @@ namespace BloodConnect.UI.Donor
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnDonations = new System.Windows.Forms.Button();
-            this.btnRecordDonation = new System.Windows.Forms.Button();
             this.btnAppointments = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
@@ -40,7 +38,6 @@ namespace BloodConnect.UI.Donor
             this.sidebarPanel.Controls.Add(this.btnDashboard);
             this.sidebarPanel.Controls.Add(this.btnProfile);
             this.sidebarPanel.Controls.Add(this.btnDonations);
-            this.sidebarPanel.Controls.Add(this.btnRecordDonation);
             this.sidebarPanel.Controls.Add(this.btnAppointments);
             this.sidebarPanel.Controls.Add(this.btnLogout);
             this.sidebarPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -53,8 +50,7 @@ namespace BloodConnect.UI.Donor
             SetupBtn(this.btnDashboard, "Dashboard", 90, this.btnDashboard_Click);
             SetupBtn(this.btnProfile, "My Profile", 148, this.btnProfile_Click);
             SetupBtn(this.btnDonations, "My Donations", 206, this.btnDonations_Click);
-            SetupBtn(this.btnRecordDonation, "Record Donation", 264, this.btnRecordDonation_Click);
-            SetupBtn(this.btnAppointments, "Appointments", 322, this.btnAppointments_Click);
+            SetupBtn(this.btnAppointments, "Appointments", 264, this.btnAppointments_Click);
             this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             SetupBtn(this.btnLogout, "Logout", 590, this.btnLogout_Click);
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(245, 247, 250);
