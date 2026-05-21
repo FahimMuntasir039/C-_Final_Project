@@ -1,0 +1,75 @@
+@startuml BloodConnect_UseCase_Diagram
+left to right direction
+skinparam packageStyle rectangle
+skinparam usecase {
+  BackgroundColor #FFF9E6
+  BorderColor #333333
+}
+skinparam actorStyle awesome
+
+title Blood Connect — Use Case Diagram
+
+rectangle "Blood Connect System" {
+
+  usecase "Login" as UC_Login
+  usecase "Register" as UC_Reg
+
+  usecase "Update Profile" as UC_Profile
+
+  usecase "Request Appointment" as UC_ReqAppt
+  usecase "Manage Donation Records" as UC_DonHist
+  usecase "View Receiver Contact" as UC_ViewRecv
+
+  usecase "Search Blood Availability" as UC_SearchBlood
+  usecase "Submit Blood Request" as UC_SubmitReq
+  usecase "Manage Blood Requests" as UC_ManageReq
+  usecase "View Donor Contact" as UC_ViewDonor
+
+  usecase "Manage Donors" as UC_ManageDonors
+  usecase "Manage Blood Stock" as UC_Stock
+  usecase "Manage Appointments" as UC_Appts
+  usecase "Approve / Reject Requests" as UC_Approve
+  usecase "Assign Donor to Receiver" as UC_Assign
+  usecase "Mark Donation Complete" as UC_Complete
+}
+
+actor Donor as donor
+actor Receiver as receiver
+actor Admin as admin
+
+donor --> UC_Login
+donor --> UC_Reg
+donor --> UC_Profile
+donor --> UC_ReqAppt
+donor --> UC_DonHist
+donor --> UC_ViewRecv
+
+receiver --> UC_Login
+receiver --> UC_Reg
+receiver --> UC_Profile
+receiver --> UC_SearchBlood
+receiver --> UC_SubmitReq
+receiver --> UC_ManageReq
+receiver --> UC_ViewDonor
+
+admin --> UC_Login
+admin --> UC_ManageDonors
+admin --> UC_Stock
+admin --> UC_Appts
+admin --> UC_Approve
+admin --> UC_Assign
+admin --> UC_Complete
+
+note right of UC_Assign
+  Admin links donor appointment
+  to receiver request when
+  blood groups match
+end note
+
+note bottom of UC_Complete
+  Creates donation record,
+  fulfills receiver request,
+  updates blood stock
+end note
+
+@enduml
